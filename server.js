@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const rp = require('request-promise-native');
@@ -5,7 +6,6 @@ const cheerio = require('cheerio')
 
 
 const app = express()
-const port = 3000
 
 function isJsonString(data) {
     try {
@@ -67,4 +67,5 @@ app.post('/', async (req, res) => {
     }
 })
 
+const port = process.env.PORT || 3000
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
