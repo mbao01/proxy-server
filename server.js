@@ -3,6 +3,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const rp = require('request-promise-native');
 const cheerio = require('cheerio')
+const cors = require('./middleware/cors')
+
 
 
 const app = express()
@@ -30,6 +32,9 @@ function autoParse(body, response, resolveWithFullResponse) {
 }
 
 app.use(bodyParser.json({ limit: "5mb" }));
+
+// Cors
+app.use(cors);
 
 app.get('/', (req, res) => res.send({ status: 200, message: 'Proxy Server. Use the POST method!'}))
 
