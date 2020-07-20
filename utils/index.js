@@ -1,4 +1,4 @@
-export const keepDefinedValues = (data: { [key: string]: any } | any) => {
+const keepDefinedValues = (data: { [key: string]: any } | any) => {
   if (!isEmpty(data)) {
     return Object.entries(data).reduce((acc, [key, value]) => {
       if (
@@ -14,4 +14,8 @@ export const keepDefinedValues = (data: { [key: string]: any } | any) => {
   }
 
   return data;
+};
+
+module.exports = {
+  keepDefinedValues,
 };

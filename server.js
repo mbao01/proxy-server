@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const rp = require('request-promise-native');
 const cheerio = require('cheerio');
 const cors = require('./middleware/cors');
-import { keepDefinedValues } from './utils';
+const { keepDefinedValues } = require('./utils');
 
 const app = express();
 
