@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const rp = require('request-promise-native');
 const cheerio = require('cheerio');
 const cors = require('./middleware/cors');
+import { keepDefinedValues } from './utils';
 
 const app = express();
 
@@ -85,7 +86,7 @@ app.post('/', async (req, res) => {
   };
 
   try {
-    const response = await rp(options);
+    const response = await rp(keepDefinedValues(options));
 
     res.send(response);
   } catch (error) {
