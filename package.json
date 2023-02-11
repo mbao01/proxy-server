@@ -20,6 +20,6 @@
     "request-promise-native": "^1.0.8"
   },
   "devDependencies": {
-    "nodemon": "2.0.4"
+    "nodemon": "2.0.20"
   }
 }
